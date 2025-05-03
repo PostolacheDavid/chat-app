@@ -1,12 +1,20 @@
 import { IoSendSharp } from "react-icons/io5";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { sendMessageWithBotReply } from "../../features/messages/botActions";
 
 const MessageInput = () => {
   const [message, setMessage] = useState("");
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(message);
+    if (!message.trim()) {
+      alert("Message cannot be empty.");
+      return;
+    }
+    dispatch(sendMessageWithBotReply(message));
+    setMessage("");
   };
 
   return (

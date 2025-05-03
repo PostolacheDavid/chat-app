@@ -41,6 +41,10 @@ textarea {
   text-align: center;
 }
 
+.center {
+  text-align: center;
+}
+
 /* || GENERAL STYLES */
 html {
   font-family: var(--FF);
@@ -138,4 +142,50 @@ input {
   width: 98%;
   height: 80%;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding-right: 0.5rem;
+}
+
+.MessageView::-webkit-scrollbar {
+  width: 8px;
+}
+
+.MessageView::-webkit-scrollbar-track {
+  background: var(--MAIN-BGCOLOR);
+  border-radius: 1rem;
+}
+
+.MessageView::-webkit-scrollbar-thumb {
+  background-color: var(--BGCOLOR);
+  border-radius: 1rem;
+  border: 2px solid var(--MAIN-BGCOLOR);
+}
+
+.MessageView {
+  scrollbar-width: thin; /* Firefox support */
+  scrollbar-color: var(--BGCOLOR) var(--MAIN-BGCOLOR);
+}
+
+.message-bubble {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 70%;
+  word-wrap: break-word;
+  width: fit-content;
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.message-bubble.user {
+  background-color: var(--BGCOLOR);
+  color: var(--MAIN-BGCOLOR);
+  align-self: flex-end;
+}
+
+.message-bubble.bot {
+  border: 1px solid var(--BGCOLOR);
+  align-self: flex-start;
 }
