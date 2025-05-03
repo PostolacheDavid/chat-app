@@ -2,6 +2,7 @@ import { IoSendSharp } from "react-icons/io5";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { sendMessageWithBotReply } from "../../features/messages/botActions";
+import { openModal } from "../../features/modal/modalSlice";
 
 const MessageInput = () => {
   const [message, setMessage] = useState("");
@@ -10,7 +11,7 @@ const MessageInput = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!message.trim()) {
-      alert("Message cannot be empty.");
+      dispatch(openModal());
       return;
     }
     dispatch(sendMessageWithBotReply(message));

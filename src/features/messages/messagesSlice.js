@@ -10,6 +10,10 @@ const messagesSlice = createSlice({
         id: Date.now(),
         text: text,
         sender: sender,
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
       });
     },
   },

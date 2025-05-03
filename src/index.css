@@ -28,6 +28,7 @@ textarea {
   --BGCOLOR: rgb(60, 79, 118);
   --FF-COLOR: rgb(56, 63, 81);
   --MAIN-BGCOLOR: rgb(221, 219, 241);
+  --MAIN-BGCOLOR-DARKER: hsla(245, 44%, 90%, 0.695);
   --MAIN-BORDER-COLOR: rgb(56, 63, 81);
 }
 
@@ -39,6 +40,7 @@ textarea {
 
 .nowrap {
   text-align: center;
+  white-space: nowrap;
 }
 
 .center {
@@ -188,4 +190,64 @@ input {
 .message-bubble.bot {
   border: 1px solid var(--BGCOLOR);
   align-self: flex-start;
+}
+
+.message-bubble .timestamp {
+  display: block;
+  font-size: 0.75rem;
+  color: gray;
+  margin-top: 0.25rem;
+  text-align: right;
+}
+
+/* || MODAL */
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--BGCOLOR);
+  color: var(--MAIN-BGCOLOR);
+  height: 50%;
+  width: 50%;
+  margin-bottom: 5%;
+  border-radius: 2rem;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.modal h1 {
+  text-align: center;
+}
+
+.modal button {
+  border: none;
+  border-radius: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 50%;
+  margin-left: 25%;
+  background-color: var(--MAIN-BGCOLOR);
+  transition: all ease-in-out 0.1s;
+}
+
+.modal button:hover {
+  cursor: pointer;
+  background-color: var(--MAIN-BGCOLOR-DARKER);
+}
+
+.modal button:active {
+  transform: scale(1) translateY(5px);
 }

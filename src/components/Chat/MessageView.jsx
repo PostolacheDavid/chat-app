@@ -23,6 +23,7 @@ const MessageView = () => {
             }`}
           >
             {msg.text}
+            <p className="timestamp nowrap">{msg.timestamp}</p>
           </div>
         );
       })}
